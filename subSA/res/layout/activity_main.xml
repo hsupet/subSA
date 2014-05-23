@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#ff000000" >
+
+    <!-- CheckBox
+        android:id="@+id/switch_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" /> -->
+
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ff595959" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TVTheme"
+            android:text="@string/start" />
+<!-- <TimePicker 
+           android:id="@+id/start_timepicker"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" /> -->
+        <TextView 
+            android:id="@+id/start_time_tv"
+            style="@style/TimeTVTheme"
+            android:text="0:00" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffd0d0d0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TVTheme"
+            android:text="@string/end" />
+<!-- <TimePicker 
+            android:id="@+id/end_timepicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" /> -->
+        <TextView 
+            android:id="@+id/end_time_tv"
+            style="@style/TimeTVTheme"
+            android:text="23:59" />
+    </LinearLayout>
+
+</LinearLayout>
