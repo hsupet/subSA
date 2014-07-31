@@ -24,10 +24,14 @@
             android:configChanges="keyboardHidden|orientation|locale"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-                        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter >
+                <action android:name="com.bnx.subsa.TranshipActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -40,10 +44,40 @@
 
         </activity>
 
+        <activity android:name=".TranshipActivity">
+             
+        </activity>
+
         <receiver android:name="com.bnx.subsa.BootupReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />  
               </intent-filter>
+        </receiver>
+
+        <!-- 设备管理 -->
+
+        <receiver android:name=".AdminReceiver"
+                android:label="@string/app_name"
+                android:description="@string/app_name"
+                android:permission="android.permission.BIND_DEVICE_ADMIN">
+                  <meta-data android:name="android.app.device_admin"  
+                           android:resource="@xml/lock_screen" />
+                  <intent-filter>  
+                      <action  
+                          android:name="android.app.action.DEVICE_ADMIN_ENABLED" />  
+                  </intent-filter>  
+        </receiver>
+
+        <receiver android:name=".PSWidget"    
+                  android:label="@string/app_name">     
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.bnx.subsa.action.widget.click" />     
+            </intent-filter>     
+            <meta-data android:name="android.appwidget.provider"    
+                       android:resource="@xml/power_widget"    
+            />     
         </receiver>
 
         <receiver android:name="com.bnx.subsa.AlarmReceiver" />
